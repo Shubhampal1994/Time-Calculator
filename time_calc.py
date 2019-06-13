@@ -75,15 +75,12 @@ def final_calculation(positive_times, negative_times):
 
 initial_time = '+00:00:00'
 
-input_time_str = input("Enter the Time Array (format: ['(+/-)hh:mm:ss', '(+/-)hh:mm:ss', ...]): ")
-print('input_time_str: ', input_time_str)
+input_time_str = input("Enter the Time Array (format: ['(+/-)hh:mm:ss',ß'(+/-)hh:mm:ss', ...]; for ex: '[+01:00:00,-02:30:00,+01:43:00]'): ")
 test1 = input_time_str[1: -1]
-print('test1: ', test1[1])
 
 input_time_array = test1.split(',')
 
 for input_time in input_time_array:
-	print('input_time: ', input_time)
 
 	input_time_list = input_time[1:].split(':')
 
@@ -97,8 +94,3 @@ for input_time in input_time_array:
 
 	initial_time = time_calculator(input_time)
 	print('Total Time: ', initial_time)
-
-
-
-
-	# "['(+/-)hh:mm:ss', '(+/-)hh:mm:ss', ...]"
