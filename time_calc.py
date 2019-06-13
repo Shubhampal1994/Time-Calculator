@@ -3,7 +3,7 @@ def time_calculator(input_time):
 	'time' must be in format '(+/-)hh:mm:ss'
 	+02:30:10-01:40:20
 	"""
-	
+
 	if input_time[0] not in '+-':
 		# formating the first time if no sign given
 		input_time = '+' + input_time
@@ -45,7 +45,7 @@ def time_calculator(input_time):
 	return final_calculation(positive_times, negative_times)
 
 def get_correct_calculation_time(hours, mins, secs):
-	
+
 	if secs >= 60:
 		mins += (secs // 60)
 		secs = (secs % 60)
@@ -75,9 +75,16 @@ def final_calculation(positive_times, negative_times):
 
 initial_time = '+00:00:00'
 
-while True:
-	
-	input_time = input("Enter the Time (format: '(+/-)hh:mm:ss'): ")
+input_time_str = input("Enter the Time Array (format: ['(+/-)hh:mm:ss', '(+/-)hh:mm:ss', ...]): ")
+print('input_time_str: ', input_time_str)
+test1 = input_time_str[1: -1]
+print('test1: ', test1[1])
+
+input_time_array = test1.split(',')
+
+for input_time in input_time_array:
+	print('input_time: ', input_time)
+
 	input_time_list = input_time[1:].split(':')
 
 	if (len(input_time_list[0]) < 2):
@@ -90,3 +97,8 @@ while True:
 
 	initial_time = time_calculator(input_time)
 	print('Total Time: ', initial_time)
+
+
+
+
+	# "['(+/-)hh:mm:ss', '(+/-)hh:mm:ss', ...]"
